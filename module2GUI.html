@@ -1,0 +1,118 @@
+<html>
+<script>
+function thief3() //moves image to the left
+
+    {
+    document.getElementById("d3").style.top = '370px';
+    document.getElementById("d3").style.left = '200px';
+    
+    }
+function thief2()
+
+{document.getElementById("d2").style.top = '200px';
+    document.getElementById("d2").style.left = '200px';
+
+}
+function thief1()
+
+{document.getElementById("d1").style.top = '50px';
+    document.getElementById("d1").style.left = '200px';
+
+}
+function reset1()
+
+{document.getElementById("d1").style.top = '0px';
+    document.getElementById("d1").style.left = '1080px';
+
+}
+function reset2()
+
+{document.getElementById("d2").style.top = '200px';
+    document.getElementById("d2").style.left = '1080px';
+
+}
+function reset3()
+
+{document.getElementById("d3").style.top = '450px';
+    document.getElementById("d3").style.left = '1080px';
+
+}
+
+
+
+</script>
+<style>
+#d1
+{ 
+  position :absolute;
+
+ width:200px;
+top:0px;
+ height:200px;
+left:1080px;
+ background:#CCA;
+ color:#000;
+ font-size:90%;
+ 
+}
+#d2
+{
+position:absolute;
+ left:1080px;
+top:200px;
+ width:200px;
+ height:200px;
+ background:#000;
+ color:#000;
+ font-size:90%;
+ 
+}
+#d3
+{
+position:absolute;
+top:420px;
+ width:200px;
+ height:200px;
+left:1080px;
+ background:#000;
+ color:#000;
+ font-size:90%;
+
+}
+DIV.static {position:absolute; top:200; left:0px;} 
+
+</style>
+<body>
+<div id="d1">
+<img src="http://www.rogerkohlcfo.com/wp-content/uploads/2011/07/wiki-thief1.jpg"height="200"width="200" align=right></div>
+
+<div id="d2">
+<img src="http://static4.depositphotos.com/1022931/387/i/950/depositphotos_3875803-Stealthy-thief.jpg"height="200"width="200" align=right>
+</div>
+
+<div class="static">
+<img src="http://img.tradeindia.com/fp/2/001/177/189.jpg"height="170"width="200"height="200"width="200" align=left>
+</div>
+
+<div id="d3" >
+<img src="http://static4.depositphotos.com/1003745/303/v/950/depositphotos_3035984-Thief.jpg"height="200"width="200" align=right>
+</div>
+
+<div>
+<button type="button" onclick = "thief3()">thief3</button>
+<button type="button" onclick = "thief2()">thief2</button>
+<button type="button" onclick = "thief1()">thief1</button>
+
+
+</div>
+<div>
+<button type="button" onclick="reset3()">reset3</button>
+<button type="button" onclick="reset2()">reset2</button>
+<button type="button" onclick="reset1()" >reset1</button>
+
+
+</div>
+
+
+</body>
+</html>
