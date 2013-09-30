@@ -12,13 +12,13 @@ This tutorial comprises of four independent modules namely :
 4.	Busywaiting_spinlock.c
 
 Each of these individual modules are also developed on same editor and these are also separately available on tutorial. On combining them we have developed a main module named “E_learningtutorial.c” ,that is also there on tutorial.
-You can just copy the code and run  it on your machine.
+To understand the above modules properly and how it works you can just copy the code and run  it on your machine.
 
 Take a small look over each module:
 
 1.	Mutex.c : 
 This module shows what is mutex? ,instructions and logic of module(recommended to read) and  how mutual exclusion is implemented over critical section.
-For this it creates a ready queue  (using linked list) based on FCFS algorithm, and variable “mutex” is used over critical section as you will see in “How a mutex works” point.
+For this it creates a ready queue  (using linked list) based on FCFS algorithm, and variable “mutex” is used over critical section as you will see in “How a mutex works” option while running the program in your editor.
 If mutex is 1 then resource(critical section) is available and if it is 0 then resource is already in use.
 
 2.	Semaphore.c :
