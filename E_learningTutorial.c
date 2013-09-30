@@ -45,6 +45,7 @@ typedef struct readyq rq;
 int spinlockturn=1,canwrite=0,canread=0,semaphore=0,in=0,out=0,tpid=1,max_item,mutex=1;
 char *writerstatus="sleeping",persign='%';
 //FUNCTION OF MUTEX MODULE
+//FUNXRION RO CREATE READY QUEUE
 
 rq* createrq(rq **t)
 {
@@ -56,6 +57,7 @@ rq* createrq(rq **t)
 	*t=newnode;
 	return *t;
 }
+//FUNCTION TO DISPLAY READY QUEUE
 void displayrq(rq *t)
 {
 	printf("\n\t\t\tREADY QUEUE\t\tMUTEX: %d\n",mutex);
@@ -67,6 +69,7 @@ void displayrq(rq *t)
 	}
 	printf("\n------------------------------------------------------------------------------\n");
 }
+//FUNCTION TO REMOVE PROCESS AFTER FINISHING ITS CRITICAL SECTION
 rq* removeprocess(rq **t)
 {
 	rq *t1=*t,*t2;
@@ -85,6 +88,7 @@ rq* removeprocess(rq **t)
 	t2->next=NULL;
 	return(t1);
 }
+//FUNCTION TO DISPLAY CRITICAL SECTION ON SCREEN
 void criticalsection(rq *t)
 {
 	int btime=t->bt;
@@ -149,6 +153,7 @@ void runmutex()
 	printf("\n\n All Processes have finished their critical sections successfully\n\n");	
 }
 //FUNCTIONS OF COUNTING_SEMAPHORE MODULE
+//FUNCTION TO CREATE BUFFER FOR PRODUCER - CONSUMER PROBLEM
 
 bf* createbuffer(bf** t)
 {
@@ -159,6 +164,8 @@ bf* createbuffer(bf** t)
 	in++;
 	return (*t);
 }
+//FUNCTION TO REMOVE PRODUCT BY CONSUMER FROM BUFFER
+
 int removeproduct(bf** t)
 {
 	bf *temp1=*t,*temp2;
@@ -214,6 +221,7 @@ void guideforcountingsemaphore()
 	\n\nusing all the three cases as production rate>consumption rate, production rate<consumption rate and production rate=consumption rate\
 	\n\n7.The program uses the relative rate of both production and consumption as incrementing factor\n\n8.Use full screen editor for better visualization\n");
 }
+//FUNCTION TO DISPLAY UPDATED BUFFER EACH TIME ON SCREEN
 
 void display(bf *t,int n)
 {
@@ -230,12 +238,14 @@ void display(bf *t,int n)
 	}
 	printf("\n\t\t                                                                                                            --> CONSUMER");
 	printf("\n                      ----------------------------------------------------------------------------------------------------\n");	
-}  
+} 
+//FUNCTION FOR PRODUCING AND CONSUMING ITEMS  INTO THE BUFFER AND FROM THE BUFFER
+
 void prod_cons_working()
 {
   	int i,loop_var1=0,loop_var2=0,max_item;
 	float prod_rate,cons_rate,percent,temper=0;
-    printf("\n Enter Production rate and consumption rate\n");
+    printf("\n Enter Production rate and consumption rate\n");//TAKE PRODUCTION RATE AND CONSUMPTION RATE FROM USER
     scanf("%f%f",&prod_rate,&cons_rate);
     if(prod_rate>cons_rate)
 	{
@@ -254,12 +264,14 @@ void prod_cons_working()
 		   printf("\n\nBOTH ARE HAVING SAME RATES\n");
 		 Sleep(1000);    
 	}
-	printf("\n INITIAL BUFFER SIZE IS 10\n");
+	printf("\n INITIAL BUFFER SIZE IS 10\n"); //DISPLAYS INITIAL BUFFER
 	printf("\n Max-item : %d \t\t,Percent : %f",max_item,percent); Sleep(1500);
 	printf("\n\t\t\t\t\t\t\t\t INITIALLY\n");
 	display(headofbuffer,max_item);
 	printf("\n\tPRODUCER : SLEEPING");
 	printf("                                                                                                            CONSUMER : SLEEPING\n");
+        //CODE FOR PRODUCING ITEMS BY PRODUCER
+        
 	prod:
 	while(1)
 	{
@@ -311,7 +323,9 @@ void prod_cons_working()
 	    
 		goto cons;
 	}
-
+  
+        //CODE FOR CONSUMPTION OF ITEMS BY CONSUMER
+   
     cons: 
 	while(1)
 	{
@@ -360,6 +374,7 @@ void prod_cons_working()
 	}
 }
 //FUNCTIONS FOR MONITOR MODULE
+//FUNCTION TO CREATE READY BUFFER OF READERS IN READER - WRITERS PROBLEM
 
 rf* createrb(rf **t)
 {
@@ -373,6 +388,8 @@ rf* createrb(rf **t)
 		*t=newnode;
 return *t;		
 }
+//FUNCTION TO REMOVE A READER WHEN IT FINISHES IT'S CRITICAL SECTION
+
 rf* removereader(rf **t)
 {
   rf *t1=*t,*t2;
@@ -397,7 +414,7 @@ rf* removereader(rf **t)
 		return(t1); 
 	}
 }
-//FUNTION TO INITIALIZE SEATS
+//FUNTION TO INITIALLY AVAILABLE SEATS IN ONLINE TRAIN RESERVATION SYSTEM
 void initializemr()
 {
 	printf("\n\nEnter the total number of lower births initially available :\n");
@@ -407,7 +424,7 @@ void initializemr()
 	printf("\n\nEnter the total number of upper births initially available :\n");
 	scanf("%d",&objofmr.ub);
 }
-//FUNCTION TO UPDATE THE NUMBER OF SEATS
+//FUNCTION TO UPDATE THE NUMBER OF SEATS EACH TIME WHEN A WRITER DOES A RESERVATION
 int updatemr(char *t)
 {
 	if(!(strcmp(t,"lb")&&strcmp(t,"LB")))
@@ -463,7 +480,7 @@ int updatemr(char *t)
 	}       
 	return 1;   
 }
-//FUNCTION TO DISPLAY READER'S BUFFER
+//FUNCTION TO DISPLAY READER'S BUFFER EACH TIME ON THE SCREEN
 void displayrbuf(rf *t)
 {
 	printf("\n\t\t\t\t\t\tREADER'S BUFFER\n");
@@ -475,7 +492,7 @@ void displayrbuf(rf *t)
  	}
  	printf("\n--------------------------------------------------------------------------------------------------------------------------------------------\n\n\n");
 }
-//FUNCTION TO DISPLAY MONITOR REGION
+//FUNCTION TO DISPLAY MONITOR REGION EACH TIME ON THE SCREEN
 void displaymr()
 {
 	printf("\n\t\t\t\t\tCANREAD : %d\t\tCANWRITE : %d\n",canread,canwrite);
@@ -489,7 +506,7 @@ void displaymr()
 	printf("\t\t\t\t|------------|----------------|------------------|\n");
 	printf("\t\t\t\t|-----------------------------------------------|\n\n\n");
 }
-//FUNCTION TO DISPLAY WRITER
+//FUNCTION TO DISPLAY WRITER EACH TIME WITH ITS STATUS 
 void displaywriter()
 {
 	printf("\n\t\t\t\t\t\tWRITER\n");
@@ -499,6 +516,8 @@ void displaywriter()
 	printf("\n\t\t\t\t|------------------------------------|\n");
 	printf("\t\t\t\t|------------------------------------|\n");
 }
+//FUNCTION TO CHANGE THE STATUS OF ALL READERSE IN BETWEEN SWITHCNIG EITHER READING OR WAITING
+
 void changestatusofbr(char *ts)
 {
 	rf *t=headofreadersbf;
@@ -517,6 +536,7 @@ void definemonitor()
 	\n\n condition variables wait and signal to check the status. In my program these are as canread and canwrite.\
 	\n\nEXAMPLE:\n\t\t Readers - Writers problem as I have discussed in this module over railway reservation system\n.");
 }
+//FUNCTION TO DISPLAY INSTRUCTIONS AND LOGIC OF THE MODULE
 void guideformonitor()
 {
 	printf("\n\nINSTRCTIONS TO KEEP IN MIND WHILE RUNNING THE MODULE :\n\n1.The problem I have solved using monitor is reader - writer's problem\
@@ -530,6 +550,7 @@ void guideformonitor()
 	\n\n and only then it can read.\n\n6.Whenever a writer enters monitor region it just allots a seat to the reader who has read first.\
 	\n\n7.The program is also tested for insufficient seats.\n\n" );
 }
+// MAIN MODULE FOR READER - WRITERS PROBLEM
 void monitorusingreadwrite()
 {
 	int nor,tnor;
@@ -586,6 +607,7 @@ void monitorusingreadwrite()
 	displaywriter();
 }
 //FUNCTIONS OF BUSYWAITING_SPINLOCK MODULE
+//FUNCTION TO CREATE INITIAL PRIORITY QUEUE USING LIKED LIST FOR PROCESSES ENTERED BY USER
 
 void createprq(prq** t)
 {
@@ -624,7 +646,7 @@ void createprq(prq** t)
 	}
    }
 }
-//FUNCTION TO DSPLAY PRIORITY QUEUE
+//FUNCTION TO DSPLAY PRIORITY QUEUE EACH TIME ON THE SCREEN
 void displayprq(prq *t)
 {
 	printf("\n============================================ WELCOME TO BUSY-WAITING AND SPINLOCK E-LERNING TUTORIAL ==========================================\n");
@@ -640,6 +662,8 @@ void displayprq(prq *t)
 	printf("\n------------------------------------------------------------------------------------------------------------------------------------------------\n\n");
 	
 }
+//FUNCTION TO REMOVE A PROCESS EACH TIME WHEN IT FINISHES ITS CRITICAL REGION WORK
+
 prq* removenodeofprq(prq **t)
 {
 	prq *t1=*t,*t2;
@@ -657,7 +681,7 @@ prq* removenodeofprq(prq **t)
 	}   
 }
 
-//FUNCTION TO DISPLAY CRITICAL REGION
+//FUNCTION TO DISPLAY CRITICAL REGION EACH TIME ON SCREEN
 void displaycsofbwaiting(prq *t)  
 {
  printf("\n\n\t\t\tCRITICAL REGION");
@@ -677,6 +701,7 @@ void definebwaiting()
 	\n\nthread proceed eventually.While busy waiting the thread uses processor time.It should be avoided since it wasts the cpu time.\
 	\n\nEXAMPLE :\n\n\t\tIn priority based execution the lower priority process always uses busy waiting.\n");
 }
+//FUNCITON TO DEFINE SPINLOCK
 void definespinlock()
 {
 	printf("\nSPINLOCK :\n\n\t\tThe lock which uses busy - waiting is called spinlock.Suppose if the control of enabling and disabling the external\
@@ -684,6 +709,7 @@ void definespinlock()
 	\n\nto 0 and disables all external intrrupts to use mutual exclusion and suppose if after finishing its task it forgets to reset the \
 	\n\n condition variable(lock) to 1 then no next process can enter in critical region even if it is empty.\n" );
 }
+//FUNCTION FOR INSTRUCTIONS AND LOGIC OF MODULE TO DISPLAY
 void guideofbwaiting()
 {
 	printf("\nLOGIC OF THE PROGRAM:\n\n\t\tAs I have already mentioned in definition that when processes are themselves provided the control of \
@@ -697,7 +723,7 @@ void guideofbwaiting()
 	\n\n as its input from user then it displays the sorted priority queue(using linked list) based on increasing order of their priority.\
 	\n\n2.The busy waiting happens with the lowest priority process that cann't enter in critical region due to spinlock.\n");
 }
-// FUNCTION FOR BUSY - WAITING AND SPINLOCK
+// MAIN FUNCTION FOR BUSY - WAITING AND SPINLOCK
 void spinlockinbwaiting()
 {
 	int tpid;
@@ -906,7 +932,7 @@ void mainbwaitingmodule()
 	printf("\n\n\t\t\tTHANKYOU FOR USING BUSY-WAITING AND SPINLOCK E-TUTORIAL\n\n");
 }
 
-//OVERALL MAIN FUNCTION
+//OVERALL MAIN FUNCTION OF THE PROGRAM
 
 int main()
 {
