@@ -1,0 +1,41 @@
+
+Please enter the name of Station:TrichyJunction
+
+Please enter the number of platform in TrichyJunction  station: 5
+
+
+All platforms are created .
+
+
+1.Press 1 for entering one train in station.
+1.Press 2 for dishplaying the current positionof platform.
+3.Press 3 for exit.
+
+Ple ase enter the choice: 1
+
+Enter the train number: 12623
+
+Enter the name of upcoming train: TamilnaduExp
+
+Do you want to add another train press y else n:
+Enter the train number: 12345
+
+Enter the name of upcoming train: RajdhaniExp
+
+Do you want to add another train press y else n:
+We can not arrive more than 'Number_of_platform/3' train together at the station...
+
+
+Train number at platform  is: 12623
+Train name is: TamilnaduExp
+
+
+Train number at platform  is: 12345
+Train name is: RajdhaniExp
+
+
+1.Press 1 for entering one train in station.
+1.Press 2 for dishplaying the current positionof platform.
+3.Press 3 for exit.
+
+Ple ase enter the choice:
