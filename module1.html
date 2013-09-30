@@ -1,0 +1,82 @@
+
+<html>
+<script>
+function thief3() //moves image to the left
+
+    {
+    document.getElementById("d3").style.top = '370px';
+    document.getElementById("d3").style.left = '200px';
+document.getElementById("d2").style.top = '200px';
+    document.getElementById("d2").style.left = '200px';
+document.getElementById("d1").style.top = '50px';
+    document.getElementById("d1").style.left = '200px';
+    
+    }
+
+
+</script>
+<style>
+#d1
+{ 
+  position :absolute;
+
+ width:200px;
+top:0px;
+ height:200px;
+left:1080px;
+ background:#CCA;
+ color:#000;
+ font-size:90%;
+ 
+}
+#d2
+{
+position:absolute;
+ left:1080px;
+top:200px;
+ width:200px;
+ height:200px;
+ background:#000;
+ color:#000;
+ font-size:90%;
+ 
+}
+#d3
+{
+position:absolute;
+top:420px;
+ width:200px;
+ height:200px;
+left:1080px;
+ background:#000;
+ color:#000;
+ font-size:90%;
+
+}
+DIV.static {position:absolute; top:200; left:0px; width:150px;} 
+
+</style>
+<body>
+<div id="d1">
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRSD8rvO-dX7mmJYmecBJYt0KVRTYFUcRIxDInyWNjAny4Cj6YO"height="200"width="200" align=right></div>
+
+<div id="d2">
+<img src="https://lh3.ggpht.com/WA7rl3ABiFaNIHHHpnPc3IXrfgXrMybBmpXUHg5SotfWuF1PzffqLPBVrWWEty6QfIhKGLw=s85"height="200"width="200" align=right>
+</div>
+
+<div class="static">
+critical section
+<img src="https://lh5.ggpht.com/tIWJdaY06BQPGmeyfuELeeDE4oNFEe2EeCMNhpxsbHJZGH_hb34Pvxe9qf0ZAAr1utjHbw=s85"height="170"width="200" align=left>
+
+</div>
+
+<div id="d3" >
+<img src="https://lh3.ggpht.com/IKT_-GKUN1TuQXPUSNWPH7KdMWXFic65I1tRNDYbnsDIIH9UNZxtQ1v4si2bkwvkK1ZO=s98"height="200"width="200" align=right>
+</div>
+
+<div>
+<button type="button" onclick = "thief3()"  >start </button>
+
+
+
+</div>
