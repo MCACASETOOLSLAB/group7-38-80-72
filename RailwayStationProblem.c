@@ -14,7 +14,7 @@
   7:-All train information will be store in another queue for some time ..
   8:- For current situation there is a function ..
   9:- For pre-scheduling We can use scheduling algo..
-  10:-It is created for 5 platform..        
+  10:-It is created for 5 platform....
   It work only for  platform station...
   
   Note:-its not complete. It will take some time for completing.May i request for some time to completing the problem...Please give some time...
@@ -227,7 +227,8 @@ int main()
                       //Node->next->platformNum=i;
                       Node->next->TrainNumber=tno;
                       strcpy(Node->next->TrainName,Tname);
-                      Node->next->next=NULL;
+                      Node->next->next=NULL;//Null asign for next node...
+                      
                       }
                    j++;   
               printf("\nDo you want to add another train press y else n:");
@@ -276,7 +277,7 @@ int main()
                }
                   
                  printf("\n\nAll platforms are created .\n\n");
-                 // DisplayStationDetails(platform);
+                                  // DisplayStationDetails(platform);
                   
                       
          }
@@ -296,7 +297,8 @@ int main()
                  else
                  printf("\nPlatform number %d is empty ready for stop a train...\n\n",t->platformNum);
                  t=t->next;
-                  }
+                 
+                                  }
             } 
       
       
