@@ -50,6 +50,7 @@ Also I  have mixed the case of priority based busy – waiting that a lower prio
 2.	You can switch in between the same module or different module by just entering your choice (y/n)  whenever prompted by the program.
 3.	If you feeling that the program/module is so fast to understand then just go through source code of that program/module and just increase the sleeping time of system in”Sleep(time)”.
 4.	Your improvable suggestions/feedbacks are warmly welcomed.
+5.	these concepts are importants in real life...
 
 
-THANK - YOU
+
